@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Button from './features/Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App():JSX.Element {
+  const defaultBgColor = "red"
+  const defaultTextcolor = "blue"
+  const [isDefault, setIsDefault] = useState(true)  
+  const change = () => { 
+    setIsDefault(prev => !prev)}
+  
+    return (
+    <div className="App">   
+     <Button customBgColor={"black"} customTextcolor={"green"} defaultBgColor = {defaultBgColor} defaultTextcolor={defaultTextcolor} change={change} isDefault={isDefault}/>
     </div>
   );
 }
